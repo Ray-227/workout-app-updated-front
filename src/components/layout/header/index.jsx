@@ -1,4 +1,4 @@
-import { FiArrowLeft } from 'react-icons/fi'
+import { IoMdArrowBack } from 'react-icons/io'
 
 import { useAuth } from '../../../hooks/useAuth.js'
 import Hamburger from '../hamburger/index.jsx'
@@ -11,7 +11,7 @@ const Header = ({ backLink }) => {
 	return (
 		<div className={styles.header}>
 			<button onClick={() => {}}>
-				<FiArrowLeft color={'white'} />
+				<IoMdArrowBack fill='#fff' fontSize={30} />
 			</button>
 			<Hamburger />
 		</div>
