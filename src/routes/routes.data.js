@@ -12,7 +12,7 @@ export const routes = [
 	{
 		path: '/',
 		element: Home,
-		isAuth: true
+		isAuth: false
 	},
 	{
 		path: '/auth',
@@ -27,7 +27,7 @@ export const routes = [
 	{
 		path: '/profile',
 		element: Profile,
-		isAuth: true
+		isAuth: false
 	}
 	// {
 	// 	path: '/new-exercise',

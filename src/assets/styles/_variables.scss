@@ -2,7 +2,7 @@
 
 $accent: #b53471;
 $white: #f1e8e8;
-$black: #1a0612;
+$black: darken($accent, 35%);
 $hard-dark-accent: darken($accent, 30%);
 $dark-accent: darken($accent, 18%);
 

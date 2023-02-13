@@ -13,9 +13,9 @@ const Router = () => {
 		<BrowserRouter>
 			<Routes>
 				{routes.map(route => {
-					// if (route.isAuth && !isAuth) {
-					// 	return false
-					// }
+					if (route.isAuth && !isAuth) {
+						return false
+					}
 
 					return (
 						<Route

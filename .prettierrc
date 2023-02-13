@@ -9,11 +9,13 @@
   "printWidth": 80,
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
+    "/ui/",
     "/hooks/",
     "/screens/",
     "/components/",
     "^../(.*)",
-    "^./(.*)"
+    "^./(.*)",
+    "/module.scss/"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
