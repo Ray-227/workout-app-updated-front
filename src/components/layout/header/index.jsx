@@ -21,7 +21,7 @@ const Header = ({ backLink = '/' }) => {
 					<IoMdArrowBack fill='#fff' fontSize={30} />
 				</button>
 			) : (
-				<button onClick={() => navigate('/profile')}>
+				<button onClick={() => navigate(isAuth ? '/profile' : '/auth')}>
 					<SlUser fill='#fff' fontSize={30} />
 				</button>
 			)}
