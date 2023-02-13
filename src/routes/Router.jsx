@@ -17,13 +17,7 @@ const Router = () => {
 						return false
 					}
 
-					return (
-						<Route
-							key={route.path}
-							path={route.path}
-							element={<route.element />}
-						/>
-					)
+					return <Route key={route.path} path={route.path} element={<route.element />} />
 				})}
 				<Route path='*' element={<NotFound404 />} />
 			</Routes>

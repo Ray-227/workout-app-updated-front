@@ -10,14 +10,14 @@ import Profile from '../components/screens/Profile'
 
 export const routes = [
 	{
-		path: '/',
-		element: Home,
-		isAuth: false
-	},
-	{
 		path: '/auth',
 		element: Auth,
 		isAuth: false
+	},
+	{
+		path: '/',
+		element: Home,
+		isAuth: true
 	},
 	{
 		path: '/new-workout',
@@ -27,7 +27,7 @@ export const routes = [
 	{
 		path: '/profile',
 		element: Profile,
-		isAuth: false
+		isAuth: true
 	}
 	// {
 	// 	path: '/new-exercise',

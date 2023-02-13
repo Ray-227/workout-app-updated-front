@@ -1,9 +1,13 @@
 import cn from 'clsx'
 
+import { useCheckToken } from '../../hooks/useCheckToken.js'
+
 import styles from './Layout.module.scss'
 import Header from './header/index.jsx'
 
 const Layout = ({ children, bgImage, heading = '', backLink = '/' }) => {
+	useCheckToken()
+
 	return (
 		<section
 			className={cn(styles.wrapper, {

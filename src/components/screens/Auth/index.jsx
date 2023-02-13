@@ -1,54 +1,14 @@
-import { useMutation } from '@tanstack/react-query'
-import Cookies from 'js-cookie'
-import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
-
 import Button from '../../ui/Button/index.jsx'
 import Field from '../../ui/Field/index.jsx'
 import Loader from '../../ui/Loader/index.jsx'
 
-import { useAuth } from '../../../hooks/useAuth.js'
-
-import AuthService from '../../../services/auth.service.js'
 import Layout from '../../layout/index.jsx'
 
 import styles from './Atuh.module.scss'
+import { useAuthPage } from './useAuthPage.js'
 
 const Auth = () => {
-	const { isAuth, setIsAuth } = useAuth()
-	const navigate = useNavigate()
-
-	useEffect(() => {
-		if (isAuth) navigate('/')
-	}, [isAuth])
-
-	const [type, setType] = useState('login')
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-		reset
-	} = useForm({
-		mode: 'onChange'
-	})
-
-	const { mutate, isLoading } = useMutation(
-		['auth'],
-		({ email, password }) => AuthService.main(email, password, type),
-		{
-			onSuccess: data => {
-				setIsAuth(true)
-				Cookies.set('red', data.token)
-				reset()
-			}
-		}
-	)
-
-	const onSubmit = data => {
-		mutate(data)
-	}
+	const { setType, register, handleSubmit, errors, isLoading, onSubmit } = useAuthPage()
 
 	return (
 		<>
