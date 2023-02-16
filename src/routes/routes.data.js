@@ -2,6 +2,7 @@ import Auth from '../components/screens/Auth'
 import Home from '../components/screens/Home'
 import NewWorkout from '../components/screens/NewWorkout'
 import Profile from '../components/screens/Profile'
+import Upload from '../components/screens/Upload'
 
 // import ExerciseLog from '../components/screens/ExerciseLog'
 // import NewExercise from '../components/screens/NewExercise'
@@ -27,6 +28,11 @@ export const routes = [
 	{
 		path: '/profile',
 		element: Profile,
+		isAuth: true
+	},
+	{
+		path: '/upload',
+		element: Upload,
 		isAuth: true
 	}
 	// {
