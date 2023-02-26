@@ -1,6 +1,6 @@
 import { $axios } from '../../api'
 
-const EXERCISES = 'exercises'
+const EXERCISES = '/exercises'
 
 class ExerciseService {
 	async getAll() {

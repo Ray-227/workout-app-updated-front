@@ -1,13 +1,11 @@
 import Auth from '../components/screens/Auth'
 import Home from '../components/screens/Home'
-// import ExerciseLog from '../components/screens/ExerciseLog'
 import NewExercise from '../components/screens/NewExercise'
 import NewWorkout from '../components/screens/NewWorkout'
 import Profile from '../components/screens/Profile'
 import Upload from '../components/screens/Upload'
-
-// import WorkoutDetail from '../components/screens/workout/WorkoutDetail'
-// import WorkoutList from '../components/screens/WorkoutList'
+import WorkoutDetail from '../components/screens/Workouts/detail/WorkoutDetail'
+import WorkoutList from '../components/screens/Workouts/list/WorkoutList'
 
 export const routes = [
 	{
@@ -39,17 +37,17 @@ export const routes = [
 		path: '/new-exercise',
 		element: NewExercise,
 		isAuth: true
-	}
-	// {
-	// 	path: '/workout/:id',
-	// 	// element: Workout,
-	// 	auth: true
-	// },
-	// {
-	// 	path: '/workouts',
-	// 	// element: ListWorkouts,
-	// 	isAuth: true
-	// },
+	},
+	{
+		path: '/workout/:id',
+		element: WorkoutDetail,
+		auth: true
+	},
+	{
+		path: '/workouts',
+		element: WorkoutList,
+		isAuth: true
+	},
 	// {
 	// 	path: '/exercise/:id',
 	// 	// element: ExerciseLog,
