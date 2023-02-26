@@ -26,14 +26,13 @@ const WorkoutDetail = () => {
 
   const { mutate } = useMutation(
     ['complete workout'],
-    () => WorkoutLogService.complete(id),
+    () => WorkoutLogService.complete(id, { 'isCompleted': true }),
     {
       onSuccess() {
         navigate('/workouts')
       }
     }
   )
-
 
   return (
     <>
@@ -49,11 +48,11 @@ const WorkoutDetail = () => {
           <Loader />
         ) : (
           <div className={styles.wrapper}>
-            {workoutLog?.workout?.exercises?.map((exercises, index) => (
-              <Fragment key={exercises.id}>
-                <ExerciseItem exercises={exercises} />
+            {workoutLog?.exercisesLog?.map((exercise, index) => (
+              <Fragment key={exercise.id}>
+                <ExerciseItem exercise={exercise} />
                 {index % 2 !== 0 &&
-                  index !== workoutLog.workout.exercises.length - 1 && (
+                  index !== workoutLog.exercisesLog.length - 1 && (
                     <div className={styles.line} />
                   )}
               </Fragment>

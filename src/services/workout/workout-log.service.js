@@ -11,8 +11,8 @@ class WorkoutLogService {
 		return $axios.post(`${WORKOUTS_LOG}/${workoutID}`)
 	}
 
-	async complete(id) {
-		return $axios.path(`${WORKOUTS_LOG}/complete/${id}`)
+	async complete(id, body) {
+		return $axios.patch(`${WORKOUTS_LOG}/complete/${id}`, body)
 	}
 }
 export default new WorkoutLogService()

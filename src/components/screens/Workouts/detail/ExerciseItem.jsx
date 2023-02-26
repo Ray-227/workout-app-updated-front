@@ -3,22 +3,22 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './WorkoutDetail.module.scss'
 
-const ExerciseItem = ({ exercises }) => {
+const ExerciseItem = ({ exercise }) => {
 	const navigation = useNavigate()
 
 	return (
 		<div
 			className={cn(styles.item, {
-				[styles.completed]: exercises?.isCompleted
+				[styles.completed]: exercise?.isCompleted
 			})}
 		>
 			<button
 				aria-label='Move to exercise'
-				onClick={() => navigation(`/exercise/${exercises.id}`)}
+				onClick={() => navigation(`/exercise/${exercise.exercise.id}`)}
 			>
-				<span>{exercises?.name}</span>
+				<span>{exercise.exercise?.name}</span>
 				<img
-					src={import.meta.env.VITE_SERVER_URL + exercises?.iconPath}
+					src={import.meta.env.VITE_SERVER_URL + exercise.exercise?.iconPath}
 					height='34'
 					alt='icon'
 					draggable={false}
