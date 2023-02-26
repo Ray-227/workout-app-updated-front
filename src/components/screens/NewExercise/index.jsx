@@ -11,7 +11,7 @@ import ExerciseService from '../../../services/exercise/exercise.service'
 import Layout from '../../Layout'
 
 import styles from './NewExercise.module.scss'
-import { getIconPath } from './icon-path.util'
+import { getIconPath } from '../../../utils/icon-path.util.js';
 
 const iconNameList = ['chest', 'shoulders', 'biceps', 'legs', 'hit', 'back']
 
@@ -73,27 +73,29 @@ const NewExercise = () => {
 
 					<Controller
 						name='iconPath'
+						rules={{required: 'Icon is required'}}
 						control={control}
 						render={({ field: { value, onChange } }) => (
-							<div className={styles.images}>
-								{iconNameList.map(name => (
-									<img
-										key={`ex img ${name}`}
-										src={`${import.meta.env.VITE_SERVER_URL}${getIconPath(name)}`}
-										alt={name}
-										className={cn({
-											[styles.active]: value === getIconPath(name)
-										})}
-										onClick={() => onChange(getIconPath(name))}
-										draggable={false}
-										height='45'
-									/>
-								))}
+							<div className={styles.imagesMarginBottom}>
+								<div className={styles.images}>
+									{iconNameList.map(name => (
+										<img
+											key={`ex img ${name}`}
+											src={`${import.meta.env.VITE_SERVER_URL}${getIconPath(name)}`}
+											alt={name}
+											className={cn({
+												[styles.active]: value === getIconPath(name)
+											})}
+											onClick={() => onChange(getIconPath(name))}
+											draggable={false}
+											height='45'
+										/>
+									))}
+								</div>
+								{errors?.iconPath && <div className='error'>{errors?.iconPath?.message}</div>}
 							</div>
 						)}
 					/>
-
-					{errors?.iconPath && <div className='error'>{errors?.iconPath?.message}</div>}
 
 					<Button>Create</Button>
 				</form>
